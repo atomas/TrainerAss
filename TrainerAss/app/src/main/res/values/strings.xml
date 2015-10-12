@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TrainerAss</string>
+    <string name="login_picture_name">loginAppLogo</string>
+    <string name="prijava">Prijava</string>
+</resources>

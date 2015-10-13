@@ -5,9 +5,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" tools:context=".LoginActivity"
-    android:id="@+id/"
+    android:id="@+id/activity.login"
     android:weightSum="1"
     android:background="#19543b">
+    <!-- GORE sam dodao sam za android:id="@+id/" ovaj  activity.login, kao ID za LinearLayout, ne znam jel tako zapravo i ide -->
+
 
     <!-- Login progress -->
 

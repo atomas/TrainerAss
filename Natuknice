@@ -1,0 +1,8 @@
+Po onom komentaru od Zlatka za modularnost
+
+Mislim da je najbolje da napravimo paket s nekim nazivom tipa "mjerenje"
+i napravimo dva modula, jedan za mjerenje centimetara a jedan za sekunde
+
+i onda ta 2 modula možemo koristiti u različitim dijelovima koda, 
+npr modul "sekund" ćemo koristiti za mjerenje krosa (1000 m) i mjerenje šprinta (100 m), 
+dok ćemo modul "centimetar" koristiti za skakanje u dalj s mjesta i skakanje u vis s mjesta (za mjerenje odraza)

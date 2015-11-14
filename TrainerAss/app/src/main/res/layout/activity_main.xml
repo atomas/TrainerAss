@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:weightSum="1"
     android:background="#19543b">
-    tools:context="hr.foi.air_trainerass.www.trainerass.OptionActivity">
+    tools:context="hr.foi.air_trainerass.www.trainerass.MainActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Odabir opcija"
+            android:text="@string/odabirOpcija"
             android:id="@+id/txtOdabirOpcija"
             android:layout_gravity="center" />
     </FrameLayout>
@@ -31,21 +31,21 @@
         <Button
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:text="Novi trening"
+            android:text="@string/noviTrening"
             android:id="@+id/buttonNoviTrening"
             android:layout_gravity="center_horizontal|top" />
 
         <Button
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:text="Pregled članova"
+            android:text="@string/pregledClanova"
             android:id="@+id/buttonPregledClanova"
             android:layout_gravity="center" />
 
         <Button
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:text="Statistika"
+            android:text="@string/statistika"
             android:id="@+id/buttonStatistika"
             android:layout_gravity="center_horizontal|bottom" />
     </FrameLayout>

@@ -37,7 +37,7 @@
             android:imeOptions="actionUnspecified" android:inputType="textPassword"
             android:maxLines="1" android:singleLine="true" />
 
-        <Button android:id="@+id/email_sign_in_button" style="?android:textAppearanceSmall"
+        <Button android:id="@+id/btn_prijava" style="?android:textAppearanceSmall"
             android:layout_width="match_parent" android:layout_height="0dp"
             android:layout_marginTop="16dp" android:text="@string/prijava"
             android:textStyle="bold"

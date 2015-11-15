@@ -5,6 +5,7 @@ import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by izavrski on 14.11.2015..
@@ -31,6 +32,10 @@ public class Sportas extends Model {
         this.datRodjenja=datRodjenja;
     }
 
+    public List<Trenira> treniraSport(){
+        return getMany(Trenira.class, "Sportas");
+    }
+
     public long getIdSportas() {
 
         return idSportas;
@@ -43,5 +48,12 @@ public class Sportas extends Model {
     public Date getDatRodenja() {
 
         return datRodjenja;
+    }
+
+    public void updateSportas(Sportas updatedSportas)
+    {
+        this.imePrez = updatedSportas.getImePrez();
+        this.datRodjenja = updatedSportas.getDatRodenja();
+        this.save();
     }
 }

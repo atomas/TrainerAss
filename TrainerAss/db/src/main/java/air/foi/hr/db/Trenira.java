@@ -61,23 +61,22 @@ public class Trenira extends Model{
         return disciplina;
     }
 
-    public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
-    }
-
     public Sportas getSportas() {
         return sportas;
-    }
-
-    public void setSportas(Sportas sportas) {
-        this.sportas = sportas;
     }
 
     public Trener getTrener() {
         return trener;
     }
 
-    public void setTrener(Trener trener) {
-        this.trener = trener;
+    public void updateTrenira(Trenira updatedTrenira)
+    {
+        this.idTrener = updatedTrenira.getIdTrener();
+        this.idSportas = updatedTrenira.getIdSportas();
+        this.idDisciplina = updatedTrenira.getIdDisciplina();
+
+        this.save();
     }
+
+
 }

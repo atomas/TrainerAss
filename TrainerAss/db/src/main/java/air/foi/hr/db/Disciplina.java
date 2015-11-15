@@ -4,6 +4,8 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 
+import java.util.List;
+
 /**
  * Created by izavrski on 14.11.2015..
  */
@@ -26,13 +28,23 @@ public class Disciplina extends Model{
 
     }
 
+    public List<Trenira> treniraDis(){
+        return getMany(Trenira.class, "Disciplina");
+    }
+
     public long getIdDisciplina() {
 
         return idDisciplina;
     }
 
-    public String getImePrez() {
+    public String getNaziv() {
 
         return naziv;
+    }
+
+    public void updateDisciplina(Disciplina updatedDisciplina)
+    {
+        this.naziv = updatedDisciplina.getNaziv();
+        this.save();
     }
 }

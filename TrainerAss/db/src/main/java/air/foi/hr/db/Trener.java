@@ -4,6 +4,8 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 
+import java.util.List;
+
 /**
  * Created by izavrski on 14.11.2015..
  */
@@ -31,6 +33,10 @@ public class Trener extends Model {
         this.lozinka=lozinka;
     }
 
+    public List<Trenira> trenira(){
+        return getMany(Trenira.class, "Trener");
+    }
+
     public long getIdTrener() {
         return idTrener;
     }
@@ -45,5 +51,14 @@ public class Trener extends Model {
 
     public String getLozinka() {
         return lozinka;
+    }
+
+    public void updateTrener(Trener updatedTrener)
+    {
+        this.imePrez = updatedTrener.getImePrez();
+        this.korIme = updatedTrener.getKorIme();
+        this.lozinka = updatedTrener.getLozinka();
+
+        this.save();
     }
 }

@@ -64,7 +64,13 @@ public class Trening extends Model {
         return trenira;
     }
 
-    public void setTrenira(Trenira trenira) {
-        this.trenira = trenira;
+    public void updateTrening(Trening updatedTrening)
+    {
+        this.vrijeme = updatedTrening.getVrijeme();
+        this.idTrenira = updatedTrening.getIdTrenira();
+        this.prisutan = updatedTrening.isPrisutan();
+        this.rezultat = updatedTrening.getRezultat();
+
+        this.save();
     }
 }

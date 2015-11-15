@@ -32,21 +32,23 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:text="@string/noviTrening"
-            android:id="@+id/buttonNoviTrening"
-            android:layout_gravity="center_horizontal|top" />
+            android:id="@+id/btn_trening"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="20dp"/>
 
         <Button
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:text="@string/pregledClanova"
-            android:id="@+id/buttonPregledClanova"
-            android:layout_gravity="center" />
+            android:id="@+id/btn_clanovi"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
 
         <Button
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:text="@string/statistika"
-            android:id="@+id/buttonStatistika"
+            android:id="@+id/btn_statistika"
             android:layout_gravity="center_horizontal|bottom" />
     </FrameLayout>
 

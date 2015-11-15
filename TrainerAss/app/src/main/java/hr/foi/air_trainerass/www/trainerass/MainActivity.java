@@ -5,9 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.activeandroid.ActiveAndroid;
+
+import air.foi.hr.db.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +20,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActiveAndroid.initialize(this);
         setContentView(R.layout.activity_main);
+
+        Button btnClanovi = (Button)findViewById(R.id.btn_clanovi);
+        btnClanovi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Clanovi.class);
+                startActivity(i);
+            }
+        });
+        Button btnStatistika = (Button)findViewById(R.id.btn_statistika);
+        btnStatistika.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Statistika.class);
+                startActivity(i);
+            }
+        });
+        Button btnTrening = (Button)findViewById(R.id.btn_trening);
+        btnTrening.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Trening.class);
+                startActivity(i);
+            }
+        });
     }
 
     /**

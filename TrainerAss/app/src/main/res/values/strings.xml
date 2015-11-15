@@ -10,6 +10,11 @@
     <string name="pregledClanova">Pregled članova</string>
     <string name="noviTrening">Novi trening</string>
     <string name="odabirOpcija">Odabir opcija</string>
+    <string name="popisClanova">Popis članova</string>
+    <string name="odabirDisciplina">Odabir disciplina</string>
+    <string name="najbolji">Najbolji</string>
+    <string name="prisutnost">Prisutnost</string>
+    <string name="dalje">Dalje</string>
 
     <string name="title_activity_login">Login</string>
     <string name="login_picture_name">loginAppLogo</string>

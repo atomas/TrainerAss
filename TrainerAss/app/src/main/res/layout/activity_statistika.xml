@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp" android:background="#19543b"
+    >
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:text="@string/prisutnost"
+        android:id="@+id/btn_prisutnost"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:text="@string/najbolji"
+        android:id="@+id/btn_najbolji"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_gravity="center" />
+
+
+</LinearLayout>

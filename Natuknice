@@ -3,7 +3,10 @@
 Mislim da je najbolje da napravimo paket s nekim nazivom tipa "mjerenje"
 i napravimo dva modula, jedan za mjerenje centimetara a jedan za sekunde
 
-+ Nisam siguran da li treba modul za centimetre jel trenutno ne znam kako to može biti modularno
+Nisam siguran da li treba modul za centimetre jer trenutno ne znam kako to može biti modularno
+
+Trenutno sam napravio modul za mjerenje sekunda (štopericu), ali mislim da nam neće trebati pause, fali mi stop nakon
+kojeg će se vraćat vrijednost. To ću završiti poslije.
 
 i onda ta 2 modula možemo koristiti u različitim dijelovima koda, 
 npr modul "sekund" ćemo koristiti za mjerenje krosa (1000 m) i mjerenje šprinta (100 m), 

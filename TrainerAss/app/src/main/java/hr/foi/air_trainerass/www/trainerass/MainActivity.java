@@ -11,8 +11,6 @@ import android.widget.Toast;
 
 import com.activeandroid.ActiveAndroid;
 
-import air.foi.hr.db.*;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         btnClanovi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), Clanovi.class);
+                Intent i = new Intent(getApplicationContext(), ClanoviActivity.class);
                 startActivity(i);
             }
         });

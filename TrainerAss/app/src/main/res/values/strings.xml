@@ -18,8 +18,8 @@
 
     <string name="title_activity_login">Login</string>
     <string name="login_picture_name">loginAppLogo</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Lozinka</string>
+    <string name="prompt_email">trener@trener.tr ili trener</string>
+    <string name="prompt_password">trener</string>
     <string name="action_sign_in">Prijava ili registracija</string>
     <string name="action_sign_in_short">Prijava</string>
     <string name="prijava">Prijava</string>

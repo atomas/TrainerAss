@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         }else{
                             //If the server response is not success
                             //Displaying an error message on toast
-                            Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Invalid username/mail or password", Toast.LENGTH_LONG).show();
                         }
                     }
                 },

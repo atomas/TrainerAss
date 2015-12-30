@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_settings:
                 break;
             case R.id.action_logout:
-                startActivity(new Intent(this, Login.class));
+                startActivity(new Intent(this, LoginActivity.class));
                 break;
         }
         //Temporary shows message that click is handled.

@@ -14,7 +14,7 @@
     <!-- GORE sam dodao sam za android:id="@+id/" ovaj  activity.login, kao ID za LinearLayout, ne znam jel tako zapravo i ide -->
 
 
-    <!-- Login progress -->
+    <!-- LoginActivity progress -->
 
     <ImageView
         android:layout_width="match_parent"

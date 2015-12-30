@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, Login.class));
                 break;
         }
-
+hhhh
         //Temporary shows message that click is handled.
         Toast.makeText(this, "Menu item " + item.getTitle() + " clicked!", Toast.LENGTH_SHORT).show();
         return true;

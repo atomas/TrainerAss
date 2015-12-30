@@ -6,7 +6,7 @@
 		$password = $_POST['password'];
 		
 		//Creating sql query
-		$sql = "SELECT * FROM Trener where korIme='$username' and lozinka ='$password' ";
+		$sql = "SELECT * FROM Trener where korIme='$username' or email = '$username' and lozinka ='$password' ";
 		
 		//importing dbConnect.php script 
 		require_once('dbConnect.php');

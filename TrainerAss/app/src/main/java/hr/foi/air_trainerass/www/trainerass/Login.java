@@ -33,22 +33,41 @@ import java.util.List;
 /**
  * A login screen that offers login via email/password.
  */
-public class Login extends AppCompatActivity {
+public class Login extends AppCompatActivity implements View.OnClickListener {
+    TextView tvRegisterLink;
+    Button btnLogin;
+    EditText etKorIme, etLozinka;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button btnPrijava = (Button)findViewById(R.id.btn_prijava);
-        btnPrijava.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(i);
+        etKorIme = (EditText) findViewById(R.id.email);
+        etLozinka = (EditText) findViewById(R.id.password);
+        btnLogin = (Button) findViewById(R.id.btn_prijava);
 
-            }
-        });
+        tvRegisterLink = (TextView) findViewById(R.id.tv_registerLink);
+
+        btnLogin.setOnClickListener(this);
+        tvRegisterLink.setOnClickListener(this);
     }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()){
+            case R.id.btn_prijava:
+                startActivity(new Intent(this, RegisterActivity.class));
+
+                break;
+
+            case R.id.tv_registerLink:
+                startActivity(new Intent(this, RegisterActivity.class));
+                break;
+        }
+
+    }
+
 }
 

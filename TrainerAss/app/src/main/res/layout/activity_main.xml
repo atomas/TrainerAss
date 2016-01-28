@@ -1,55 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1"
-    android:background="#19543b">
-    tools:context="hr.foi.air_trainerass.www.trainerass.MainActivity">
+    android:fitsSystemWindows="true"
+    tools:context="air.foi.hr.trainerassistant.MainActivity">
 
-    <FrameLayout
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.15"
-        android:background="#ffffff">
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/odabirOpcija"
-            android:id="@+id/txtOdabirOpcija"
-            android:layout_gravity="center" />
-    </FrameLayout>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.67">
+    </android.support.design.widget.AppBarLayout>
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:text="@string/noviTrening"
-            android:id="@+id/btn_trening"
-            android:layout_gravity="center_horizontal|top"
-            android:layout_marginTop="20dp"/>
+    <include layout="@layout/content_main" />
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:text="@string/pregledClanova"
-            android:id="@+id/btn_clanovi"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"/>
-
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:text="@string/statistika"
-            android:id="@+id/btn_statistika"
-            android:layout_gravity="center_horizontal|bottom" />
-    </FrameLayout>
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

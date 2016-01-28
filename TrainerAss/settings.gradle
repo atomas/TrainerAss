@@ -1,1 +1,1 @@
-include ':app', ':db', ':mjerenja'
+include ':app'

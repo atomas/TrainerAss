@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/kandidat_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:text="@string/kandidat"/>
+
+    <TextView
+        android:id="@+id/ime_kandidat_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorAccent"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/kandidat_textView"/>
+
+    <TextView
+        android:id="@+id/vrijeme_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/colorAccent"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/ime_kandidat_textview"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sekunde"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@+id/ime_kandidat_textview"
+        android:layout_toRightOf="@+id/vrijeme_textview"
+        android:layout_toEndOf="@+id/vrijeme_textview"/>
+
+    <Button
+        android:id="@+id/dalje_pojedinacna_disciplina_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sljedeci"
+        android:textColor="@color/background"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        />
+
+    <Button
+        android:id="@+id/startTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start"
+        android:textColor="@color/background"
+        android:layout_above="@+id/dalje_pojedinacna_disciplina_button"/>
+
+    <Button
+        android:id="@+id/pauseTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pause"
+        android:textColor="@color/background"
+        android:layout_above="@+id/dalje_pojedinacna_disciplina_button"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/resetTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset"
+        android:textColor="@color/background"
+        android:layout_above="@+id/dalje_pojedinacna_disciplina_button"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

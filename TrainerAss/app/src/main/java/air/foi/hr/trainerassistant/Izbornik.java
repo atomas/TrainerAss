@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import air.foi.hr.trainerassistant.base.BaseActivity;
+import air.foi.hr.trainerassistant.fragment.PrisutnostFragment;
 import air.foi.hr.trainerassistant.model.Atleticar;
 import air.foi.hr.trainerassistant.model.Disciplina;
 
@@ -33,7 +34,7 @@ public class Izbornik extends BaseActivity {
         pDialog.setCanceledOnTouchOutside(false);
         pDialog.setCancelable(false);
         PreuzmiAtleticara a = new PreuzmiAtleticara();
-        a.execute("http://air.comxa.com/rest/clan.php");
+        a.execute("http://izavrski.netau.net/rest/clan.php");
         pDialog.show();
 
     }
@@ -83,7 +84,7 @@ public class Izbornik extends BaseActivity {
         @Override
         protected void onPostExecute(List<Atleticar> atleticars) {
             PreuzmiDiscipline d = new PreuzmiDiscipline();
-            d.execute("http://air.comxa.com/rest/disciplina.php");
+            d.execute("http://izavrski.netau.net/rest/disciplina.php");
         }
     }
 
@@ -100,6 +101,7 @@ public class Izbornik extends BaseActivity {
         @Override
         protected void onPostExecute(List<Disciplina> disciplinas) {
             pDialog.dismiss();
+            getSupportFragmentManager().beginTransaction().replace(R.id.izbornik_frame, new PrisutnostFragment()).commit();
         }
     }
 

@@ -70,7 +70,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         protected String doInBackground(RequestPackage... params) {
             String content = HttpManager.getData(params[0]);
             Log.d("Ovo je content", content);
-            return "anto tomas";
+            return content;
         }
 
         @Override

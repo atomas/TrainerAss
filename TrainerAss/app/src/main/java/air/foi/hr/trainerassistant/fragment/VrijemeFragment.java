@@ -3,6 +3,7 @@ package air.foi.hr.trainerassistant.fragment;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -113,9 +114,16 @@ public class VrijemeFragment extends BaseFragment implements View.OnClickListene
                 stoped = false;
                 break;
             case R.id.dalje_pojedinacna_disciplina_button:
+                //pogledaj da li su se izredali svi kandidati i discipline
+                //svi prisutni kandidati moraju proci kroz odabrane discipline
+                //s predstavlja kandidate, a d discipline
+                //nakon svakog zapisa kandidata, on se sprema na server
+                //kada svi produ, vraca se aplikacija na izbornik
                 if (s == ((Izbornik) getActivity()).getNazocniList().size() && d == ((Izbornik) getActivity()).getNazocneDiscipline().size()) {
-                    addKorisnik(s-1, d-1);
+                    addKorisnik(s - 1, d - 1);
+                    //swapFragment(new IzbornikFragment());
                     swapFragment(new IzbornikFragment());
+                    getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 } else if (s == ((Izbornik) getActivity()).getNazocniList().size() && d != ((Izbornik) getActivity()).getNazocneDiscipline().size()) {
                     addKorisnik(s - 1, d - 1);
                     s=0;

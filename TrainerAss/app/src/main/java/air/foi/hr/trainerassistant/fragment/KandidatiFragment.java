@@ -19,14 +19,9 @@ public class KandidatiFragment extends BaseFragment implements View.OnClickListe
     private KandidatiAdapter adapter;
     private FloatingActionButton fab;
     private int position;
-    private String name;
 
     public KandidatiFragment(){
 
-    }
-
-    public KandidatiFragment(String name){
-        this.name = name;
     }
 
     @Override
@@ -54,7 +49,7 @@ public class KandidatiFragment extends BaseFragment implements View.OnClickListe
 
     @Override
     public String getItemName() {
-        return name;
+        return "Lista kandidata";
     }
 
     @Override

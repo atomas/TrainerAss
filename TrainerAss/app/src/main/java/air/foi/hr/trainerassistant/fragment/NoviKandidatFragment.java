@@ -2,6 +2,7 @@ package air.foi.hr.trainerassistant.fragment;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -86,6 +87,7 @@ public class NoviKandidatFragment extends BaseFragment implements View.OnClickLi
                 a.setPrezime(prezime.getText().toString());
                 ((Izbornik) getActivity()).getAtleticarList().add(a);
                 swapFragment(new IzbornikFragment());
+                getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 toastIt("Uspješno dodan korisnik");
             }
             else

@@ -1,7 +1,7 @@
 package air.foi.hr.trainerassistant.fragment;
 
-import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,16 +18,17 @@ import air.foi.hr.trainerassistant.R;
 import air.foi.hr.trainerassistant.RequestPackage;
 import air.foi.hr.trainerassistant.adapter.KandidatiAdapter;
 import air.foi.hr.trainerassistant.adapter.NazocniAdapter;
+import air.foi.hr.trainerassistant.api.NavigationItem;
 import air.foi.hr.trainerassistant.base.BaseFragment;
 import air.foi.hr.trainerassistant.model.Atleticar;
 
 
-public class PrisutnostFragment extends BaseFragment implements View.OnClickListener{
+public class PrisutnostFragment extends BaseFragment implements View.OnClickListener, NavigationItem{
 
     Button dalje;
     private RecyclerView recyclerView;
     private NazocniAdapter adapter;
-    private ProgressDialog pDialog;
+    private int position;
 
     @Override
     protected int getLayout() {
@@ -56,55 +57,26 @@ public class PrisutnostFragment extends BaseFragment implements View.OnClickList
                 ((Izbornik) getActivity()).getNazocniList().add(a);
             }
         }
-        //definiranje arraya kako bi mogao poslati podatke na server
-        JSONArray json = new JSONArray();
-        for (Atleticar a : ((Izbornik) getActivity()).getAtleticarList()){
-            if (((Izbornik) getActivity()).getNazocniList().contains(a)){
-                JSONObject jsonObject = new JSONObject();
-                try {
-                    jsonObject.put("id_clan", String.valueOf(a.getId()));
-                    jsonObject.put("prisutan", a.isNazocan());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                json.put(jsonObject);
-            }
-        }
-        Log.d("Ovo je json", json.toString());
-        //slanje podataka na server
-        UpdatePrisutnost update = new UpdatePrisutnost();
-        RequestPackage r = new RequestPackage();
-        r.setMethod("POST");
-        r.setUri("http://izavrski.netau.net/rest/prisutnost.php");
-        r.setParam("prisutnost", json.toString());
-        update.execute(r);
+        swapFragment(new DisciplineFragment());
     }
 
-    private class UpdatePrisutnost extends AsyncTask<RequestPackage, String, String> {
-
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            pDialog = new ProgressDialog(getActivity());
-            pDialog.setCancelable(false);
-            pDialog.setCanceledOnTouchOutside(false);
-            pDialog.show();
-        }
-
-        @Override
-        protected String doInBackground(RequestPackage... params) {
-            //vracam odgovor u varijablu string sa servera
-            String content = HttpManager.getData(params[0]);
-            return content;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            pDialog.dismiss();
-            //nakon sto se unese na server, pristupam izbornik fragmentu
-            swapFragment(new IzbornikFragment());
-        }
+    @Override
+    public String getItemName() {
+        return "Novi trening";
     }
 
+    @Override
+    public int getPosition() {
+        return position;
+    }
+
+    @Override
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    @Override
+    public Fragment getFragment() {
+        return this;
+    }
 }

@@ -15,20 +15,15 @@ import air.foi.hr.trainerassistant.base.BaseFragment;
 import air.foi.hr.trainerassistant.model.Disciplina;
 
 
-public class DisciplineFragment extends BaseFragment implements View.OnClickListener, NavigationItem{
+public class DisciplineFragment extends BaseFragment implements View.OnClickListener{
 
     private RecyclerView recyclerView;
     private DisciplineAdapter adapter;
     private Button dalje;
     private int position;
-    private String name;
 
     public DisciplineFragment(){
 
-    }
-
-    public DisciplineFragment(String name){
-        this.name = name;
     }
 
     @Override
@@ -59,25 +54,5 @@ public class DisciplineFragment extends BaseFragment implements View.OnClickList
         }
         swapFragment(new VrijemeFragment());
 
-    }
-
-    @Override
-    public String getItemName() {
-        return name;
-    }
-
-    @Override
-    public int getPosition() {
-        return position;
-    }
-
-    @Override
-    public void setPosition(int position) {
-        this.position = position;
-    }
-
-    @Override
-    public Fragment getFragment() {
-        return this;
     }
 }

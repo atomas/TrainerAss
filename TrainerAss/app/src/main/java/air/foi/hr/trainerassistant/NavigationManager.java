@@ -17,9 +17,7 @@ import air.foi.hr.trainerassistant.adapter.IzbornikAdapter;
 import air.foi.hr.trainerassistant.api.Click;
 import air.foi.hr.trainerassistant.api.NavigationItem;
 
-/**
- * Created by prolink on 22/01/16.
- */
+
 public class NavigationManager {
 
     public ArrayList<NavigationItem> navigationItems;
@@ -70,6 +68,8 @@ public class NavigationManager {
 
     public void setup(){
 
+        //postavljanje adaptera i liste, te clicka na listu
+        //ako se klikne na neki item u listi, poziva se metoda selectitem
         mNavigationAdapter = new IzbornikAdapter(mHanlderActivity, getNavigationOptions());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mHanlderActivity));
         mRecyclerView.setAdapter(mNavigationAdapter);
@@ -77,7 +77,6 @@ public class NavigationManager {
 
             @Override
             public void clickListener(int id) {
-
                 selectItem(id);
             }
 
@@ -86,19 +85,23 @@ public class NavigationManager {
     }
 
     private void selectItem(int position){
+        //kada se klikne na neki item u recyclerview, poziva se ova metoda
+        //zadatak joj je da u contejner stavi kliknuti fragment, a to radi funkcija switchFragment
         switchFragment(position);
         mHanlderActivity.setTitle(getNavigationOptions().get(position));
     }
 
     private void switchFragment(int position){
+        //omogucujes da se desi transakcija sa starog fragmenta na novi fragment koji je kliknut
         Fragment fragment = navigationItems.get(position).getFragment();
-        FragmentTransaction transaction = ((FragmentActivity) mHanlderActivity).getSupportFragmentManager().beginTransaction();
+        FragmentTransaction transaction = ((FragmentActivity) mHanlderActivity).getSupportFragmentManager().beginTransaction().addToBackStack("air");
         transaction.replace(R.id.izbornik_frame, fragment);
         ((FragmentActivity) mHanlderActivity).getSupportFragmentManager();
         transaction.commit();
     }
 
     public boolean isEmpty(){
+        //provjera dali je lista prazna
         if(getNavigationOptions().size() == 0) return true;
         else return false;
     }

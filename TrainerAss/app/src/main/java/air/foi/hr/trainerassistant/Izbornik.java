@@ -2,18 +2,19 @@ package air.foi.hr.trainerassistant;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import air.foi.hr.trainerassistant.base.BaseActivity;
-import air.foi.hr.trainerassistant.fragment.PrisutnostFragment;
+import air.foi.hr.trainerassistant.fragment.IzbornikFragment;
 import air.foi.hr.trainerassistant.model.Atleticar;
 import air.foi.hr.trainerassistant.model.Disciplina;
 
 public class Izbornik extends BaseActivity {
 
+    //definiranje varijabli koje ce se korisitti u fragmentima
+    //za ove su postalvjeni getteri i setteri kako bi se moglo pristupiti njima
     private List<Atleticar> atleticarList, nazocniList;
     private List<Disciplina> disciplinaList, nazocneDiscipline;
     private ProgressDialog pDialog;
@@ -101,7 +102,7 @@ public class Izbornik extends BaseActivity {
         @Override
         protected void onPostExecute(List<Disciplina> disciplinas) {
             pDialog.dismiss();
-            getSupportFragmentManager().beginTransaction().replace(R.id.izbornik_frame, new PrisutnostFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.izbornik_frame, new IzbornikFragment()).commit();
         }
     }
 

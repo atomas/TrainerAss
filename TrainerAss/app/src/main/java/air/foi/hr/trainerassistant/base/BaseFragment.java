@@ -25,7 +25,7 @@ public abstract class BaseFragment extends Fragment{
     }
 
     protected void swapFragment(Fragment fragment){
-        getFragmentManager().beginTransaction().replace(R.id.izbornik_frame, fragment).commit();
+        getFragmentManager().beginTransaction().addToBackStack("tim").replace(R.id.izbornik_frame, fragment).commit();
     }
 
     protected void toastIt(String message){

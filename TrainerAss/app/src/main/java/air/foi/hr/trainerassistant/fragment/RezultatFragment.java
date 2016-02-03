@@ -22,25 +22,20 @@ import air.foi.hr.trainerassistant.model.Atleticar;
 import air.foi.hr.trainerassistant.model.Disciplina;
 import air.foi.hr.trainerassistant.model.Rezultat;
 
+
 public class RezultatFragment extends BaseFragment implements NavigationItem {
 
     private int position;
-    private String name;
     private RecyclerView recyclerView;
     private RezultatiAdapter adapter;
     private List<Atleticar> atleticarList;
     private List<Disciplina> disciplinaList;
     private ProgressDialog pDialog;
-    private int a= 0;
+    private int a;
+    private Disciplina d;
 
     public RezultatFragment(){
         //konstruktor
-    }
-
-    public RezultatFragment(String name){
-
-        //konstruktor
-        this.name = name;
     }
 
 
@@ -51,8 +46,10 @@ public class RezultatFragment extends BaseFragment implements NavigationItem {
 
     @Override
     protected void init() {
+        Log.d("Inicijalizacija", "Inicijalizacija");
         //inicijalizacija
         disciplinaList = new ArrayList<>();
+        a=0;
         //dohvacanje podataka sa apija
         RequestPackage p = new RequestPackage();
         p.setMethod("POST");
@@ -64,7 +61,7 @@ public class RezultatFragment extends BaseFragment implements NavigationItem {
 
     @Override
     public String getItemName() {
-        return name;
+        return "Pregled statistike";
     }
 
     @Override
@@ -87,6 +84,10 @@ public class RezultatFragment extends BaseFragment implements NavigationItem {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            d = new Disciplina();
+            for (Disciplina dr : ((Izbornik) getActivity()).getDisciplinaList()){
+                Log.d("Ovo je " + String.valueOf(a), dr.getNaziv());
+            }
             pDialog = new ProgressDialog(getActivity());
             pDialog.setCancelable(false);
             pDialog.setCanceledOnTouchOutside(false);
@@ -99,7 +100,6 @@ public class RezultatFragment extends BaseFragment implements NavigationItem {
             Log.d("Ovo je content", content);
             //parsiranje
             atleticarList = JSONParser.parseAtleticar(content);
-            Disciplina d = new Disciplina();
             d.setNaziv(((Izbornik) getActivity()).getDisciplinaList().get(a).getNaziv());
             d.setAtleticarList(atleticarList);
             //dodavanje itema u disciplinelist

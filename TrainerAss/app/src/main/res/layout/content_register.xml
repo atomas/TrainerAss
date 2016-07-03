@@ -65,10 +65,27 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_trener_password"
+        android:id="@+id/input_layout_trener_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_layout_trener_username"
+        android:textColorHint="@color/colorAccent">
+
+        <EditText
+            android:id="@+id/input_trener_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Email"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_trener_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_layout_trener_email"
         android:textColorHint="@color/colorAccent">
 
         <EditText

@@ -1,7 +1,8 @@
- 
+package air.foi.hr.trainerassistant;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,9 +36,8 @@ public class Izbornik extends BaseActivity {
         pDialog.setCanceledOnTouchOutside(false);
         pDialog.setCancelable(false);
         PreuzmiAtleticara a = new PreuzmiAtleticara();
-        a.execute("http://izavrski.netau.net/rest/clan.php");
+        a.execute("http://atomas.comxa.com/rest/clan.php");
         pDialog.show();
-
     }
 
     public List<Atleticar> getAtleticarList() {
@@ -78,6 +78,7 @@ public class Izbornik extends BaseActivity {
         protected List<Atleticar> doInBackground(String... params) {
             //preuzimanje atleticara i njihovo parsiranje
             String content = HttpManager.getData(params[0]);
+            Log.i("Content", content);
             atleticarList = JSONParser.parseAtleticar(content);
             return atleticarList;
         }
@@ -85,7 +86,7 @@ public class Izbornik extends BaseActivity {
         @Override
         protected void onPostExecute(List<Atleticar> atleticars) {
             PreuzmiDiscipline d = new PreuzmiDiscipline();
-            d.execute("http://izavrski.netau.net/rest/disciplina.php");
+            d.execute("http://atomas.comxa.com/rest/disciplina.php");
         }
     }
 

@@ -1,4 +1,4 @@
-package viewholder;
+package air.foi.hr.trainerassistant.viewholder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -26,9 +26,18 @@ public class RezultatViewHolder extends RecyclerView.ViewHolder {
         //buduci da je na mokapima prikazano samo tri atleticara iz svake discipline
         //sprema se disciplina i najbolja tri iz svake discipline
         disciplina.setText(disciplinae.getNaziv());
-        prvi.setText(disciplinae.getAtleticarList().get(0).getPrezime() + " " + disciplinae.getAtleticarList().get(0).getIme());
-        drugi.setText(disciplinae.getAtleticarList().get(1).getPrezime() + " " + disciplinae.getAtleticarList().get(1).getIme());
-        treci.setText(disciplinae.getAtleticarList().get(2).getPrezime() + " " + disciplinae.getAtleticarList().get(2).getIme());
+        if (disciplinae.getAtleticarList().size() > 2) {
+            prvi.setText(disciplinae.getAtleticarList().get(0).getPrezime() + " " + disciplinae.getAtleticarList().get(0).getIme());
+            drugi.setText(disciplinae.getAtleticarList().get(1).getPrezime() + " " + disciplinae.getAtleticarList().get(1).getIme());
+            treci.setText(disciplinae.getAtleticarList().get(2).getPrezime() + " " + disciplinae.getAtleticarList().get(2).getIme());
+        }
+        if (disciplinae.getAtleticarList().size() == 2) {
+            prvi.setText(disciplinae.getAtleticarList().get(0).getPrezime() + " " + disciplinae.getAtleticarList().get(0).getIme());
+            drugi.setText(disciplinae.getAtleticarList().get(1).getPrezime() + " " + disciplinae.getAtleticarList().get(1).getIme());
+        }
+        if (disciplinae.getAtleticarList().size() == 1) {
+            prvi.setText(disciplinae.getAtleticarList().get(0).getPrezime() + " " + disciplinae.getAtleticarList().get(0).getIme());
+        }
     }
 
 }

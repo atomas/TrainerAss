@@ -1,4 +1,4 @@
-package base;
+package air.foi.hr.trainerassistant.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

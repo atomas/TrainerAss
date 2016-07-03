@@ -1,4 +1,4 @@
- 
+package air.foi.hr.trainerassistant;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -11,7 +11,7 @@ import air.foi.hr.trainerassistant.base.BaseActivity;
 
 public class RegisterActivity extends BaseActivity implements View.OnClickListener{
 
-    private EditText ime, prezime, username, password;
+    private EditText ime, prezime, username, password, email;
     private Button dalje;
     private ProgressDialog pDialog;
 
@@ -26,6 +26,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         ime = (EditText) findViewById(R.id.input_trener_ime);
         prezime = (EditText) findViewById(R.id.input_trener_prezime);
         username = (EditText) findViewById(R.id.input_trener_username);
+        email = (EditText) findViewById(R.id.input_trener_email);
         password = (EditText) findViewById(R.id.input_trener_password);
         dalje = (Button) findViewById(R.id.dalje_novi_trener_button);
         dalje.setOnClickListener(this);
@@ -38,11 +39,12 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View v) {
         if (!ime.getText().toString().equals("") || !prezime.getText().toString().equals("") || !username.getText().toString().equals("") || !password.getText().toString().equals("")) {
             RequestPackage p = new RequestPackage();
-            p.setUri("http://izavrski.netau.net/rest/register.php");
+            p.setUri("http://atomas.comxa.com/rest/register.php");
             p.setMethod("POST");
             p.setParam("ime", ime.getText().toString());
             p.setParam("prezime", prezime.getText().toString());
             p.setParam("username", username.getText().toString());
+            p.setParam("email", email.getText().toString());
             p.setParam("password", password.getText().toString());
             NoviTrener task = new NoviTrener();
             task.execute(p);
@@ -71,6 +73,9 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             if (s.substring(0,1).equals("1")) {
                 toastIt("Uspješno dodan korisnik");
                 finish();
+            }
+            else if (s.substring(0,1).equals("3")) {
+                toastIt("Email ili korisnicko ime vec postoji");
             }
             else
                 toastIt("Greška na serveru");

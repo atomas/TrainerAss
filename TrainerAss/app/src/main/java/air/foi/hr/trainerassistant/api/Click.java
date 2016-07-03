@@ -1,4 +1,4 @@
-package api;
+package air.foi.hr.trainerassistant.api;
 
 public interface Click {
 

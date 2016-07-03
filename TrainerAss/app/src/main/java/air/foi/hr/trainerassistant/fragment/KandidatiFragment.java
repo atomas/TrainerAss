@@ -1,4 +1,4 @@
-package fragment;
+package air.foi.hr.trainerassistant.fragment;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;

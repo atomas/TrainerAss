@@ -1,4 +1,4 @@
-package fragment;
+package air.foi.hr.trainerassistant.fragment;
 
 import android.support.v7.widget.RecyclerView;
 
@@ -19,12 +19,14 @@ public class IzbornikFragment extends BaseFragment {
     @Override
     protected void init() {
         //inicijalizacija i ovaj fragment je modularan
+
         nm = NavigationManager.getInstance();
         nm.setDependencies(getActivity(), (RecyclerView) view.findViewById(R.id.izbornik_recycler));
         if (nm.isEmpty()){
-            nm.addItem(new RezultatFragment());
             nm.addItem(new KandidatiFragment());
             nm.addItem(new PrisutnostFragment());
+            nm.addItem(new RezultatFragment());
+
         }
         nm.setup();
 

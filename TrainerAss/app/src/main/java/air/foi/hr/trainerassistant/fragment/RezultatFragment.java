@@ -1,4 +1,4 @@
-package fragment;
+package air.foi.hr.trainerassistant.fragment;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -33,11 +33,11 @@ public class RezultatFragment extends BaseFragment implements NavigationItem {
     private ProgressDialog pDialog;
     private int a;
     private Disciplina d;
+    private String name;
 
     public RezultatFragment(){
         //konstruktor
     }
-
 
     @Override
     protected int getLayout() {
@@ -53,10 +53,14 @@ public class RezultatFragment extends BaseFragment implements NavigationItem {
         //dohvacanje podataka sa apija
         RequestPackage p = new RequestPackage();
         p.setMethod("POST");
-        p.setUri("http://izavrski.netau.net/rest/rezultat.php");
+        p.setUri("http://atomas.comxa.com/rest/rezultat.php");
         p.setParam("id", String.valueOf(((Izbornik) getActivity()).getDisciplinaList().get(0).getId()));
         Update update = new Update();
         update.execute(p);
+        pDialog = new ProgressDialog(getActivity());
+        pDialog.setCancelable(false);
+        pDialog.setCanceledOnTouchOutside(false);
+        pDialog.show();
     }
 
     @Override
@@ -88,10 +92,6 @@ public class RezultatFragment extends BaseFragment implements NavigationItem {
             for (Disciplina dr : ((Izbornik) getActivity()).getDisciplinaList()){
                 Log.d("Ovo je " + String.valueOf(a), dr.getNaziv());
             }
-            pDialog = new ProgressDialog(getActivity());
-            pDialog.setCancelable(false);
-            pDialog.setCanceledOnTouchOutside(false);
-            pDialog.show();
         }
 
         @Override
@@ -113,6 +113,7 @@ public class RezultatFragment extends BaseFragment implements NavigationItem {
             Log.d("Ovo je a", String.valueOf(a));
             Log.d("Ovo je size", String.valueOf(((Izbornik) getActivity()).getDisciplinaList().size()));
             if (a == ((Izbornik) getActivity()).getDisciplinaList().size()) {
+                Log.i("Usao sam u if", "if");
                 pDialog.dismiss();
                 //ako sam dodao sve discipline, i sve atleticare, prikazi ih u listi
                 recyclerView = (RecyclerView) view.findViewById(R.id.rezultati_recyclerView);
@@ -120,11 +121,12 @@ public class RezultatFragment extends BaseFragment implements NavigationItem {
                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                 recyclerView.setAdapter(adapter);
             } else {
+                Log.i("Usao sam u else", "else");
                 //postoji jos atleticara koji se trebaju dodati, zbog toga se ponovno poziva server
-                pDialog.dismiss();
+                //pDialog.dismiss();
                 RequestPackage p = new RequestPackage();
                 p.setMethod("POST");
-                p.setUri("http://izavrski.netau.net/rest/rezultat.php");
+                p.setUri("http://atomas.comxa.com/rest/rezultat.php");
                 p.setParam("id", String.valueOf(((Izbornik) getActivity()).getDisciplinaList().get(a).getId()));
                 Update update = new Update();
                 update.execute(p);

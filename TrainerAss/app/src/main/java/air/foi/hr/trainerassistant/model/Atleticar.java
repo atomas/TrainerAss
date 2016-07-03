@@ -1,4 +1,4 @@
-package model;
+package air.foi.hr.trainerassistant.model;
 
 
 public class Atleticar {

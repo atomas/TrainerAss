@@ -19,4 +19,6 @@
     <string name="pause">PAUSE</string>
     <string name="reset">RESET</string>
     <string name="title_activity_register">RegisterActivity</string>
+    <string name="email">email</string>
+    <string name="Email">Email</string>
 </resources>

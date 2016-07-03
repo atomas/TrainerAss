@@ -1,4 +1,4 @@
-package fragment;
+package air.foi.hr.trainerassistant.fragment;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -46,7 +46,7 @@ public class NoviKandidatFragment extends BaseFragment implements View.OnClickLi
         //u protivnom ispisi da nisu sva polja popunjena
         if (!ime.getText().toString().equals("") || !prezime.getText().toString().equals("") || !visina.getText().toString().equals("") || !datum.getText().toString().equals("") || !tezina.getText().toString().equals("")) {
             RequestPackage p = new RequestPackage();
-            p.setUri("http://izavrski.netau.net/rest/dodaj.php");
+            p.setUri("http://atomas.comxa.com/rest/dodaj.php");
             p.setMethod("POST");
             p.setParam("ime", ime.getText().toString());
             p.setParam("prezime", prezime.getText().toString());
@@ -80,8 +80,6 @@ public class NoviKandidatFragment extends BaseFragment implements View.OnClickLi
         protected void onPostExecute(String s) {
             pDialog.dismiss();
             if (s.substring(0,1).equals("1")) {
-                //ako sam uspio unijeti sve podatke dobro, ispise se uspjesno dodavanje novog korisnika
-                //u protivnom se desila greska na serveru
                 Atleticar a = new Atleticar();
                 a.setIme(ime.getText().toString());
                 a.setPrezime(prezime.getText().toString());

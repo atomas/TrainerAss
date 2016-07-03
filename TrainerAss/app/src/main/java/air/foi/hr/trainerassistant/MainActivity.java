@@ -1,4 +1,4 @@
- 
+package air.foi.hr.trainerassistant;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -42,10 +42,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         switch(v.getId()){
             case R.id.prijavaButton:
                 RequestPackage p = new RequestPackage();
-                p.setUri("http://izavrski.netau.net/rest/login.php");
+                p.setUri("http://atomas.comxa.com/rest/login1.php");
                 p.setMethod("POST");
-                p.setParam("user", korisnicko_ime.getText().toString());
-                p.setParam("pass", lozinka.getText().toString());
+                p.setParam("username", korisnicko_ime.getText().toString());
+                p.setParam("password", lozinka.getText().toString());
                 LoginTask task = new LoginTask();
                 task.execute(p);
                 break;

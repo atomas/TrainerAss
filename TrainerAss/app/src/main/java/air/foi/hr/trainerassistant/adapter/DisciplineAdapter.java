@@ -1,4 +1,4 @@
-package adapter;
+package air.foi.hr.trainerassistant.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

@@ -1,4 +1,4 @@
- 
+package air.foi.hr.trainerassistant;
 
 import android.app.Activity;
 import android.app.FragmentManager;
@@ -77,7 +77,7 @@ public class NavigationManager {
 
             @Override
             public void clickListener(int id) {
-                selectItem(id);
+                selectItem(id);   //kliknuo na kandidati fragment: id = 0
             }
 
         });

@@ -1,4 +1,4 @@
-package air.foi.hr.trainerassistant.fragment;
+package fragment;
 
 import android.support.v7.widget.RecyclerView;
 

@@ -1,4 +1,4 @@
-package air.foi.hr.trainerassistant.api;
+package api;
 
 import android.support.v4.app.Fragment;
 

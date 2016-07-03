@@ -1,4 +1,4 @@
-package air.foi.hr.trainerassistant;
+ 
 
 import android.app.ProgressDialog;
 import android.content.Intent;

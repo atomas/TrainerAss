@@ -1,4 +1,4 @@
-package air.foi.hr.trainerassistant.fragment;
+package fragment;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;

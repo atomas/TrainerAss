@@ -1,4 +1,4 @@
-package air.foi.hr.trainerassistant.model;
+package model;
 
 import java.util.List;
 

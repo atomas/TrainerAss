@@ -1,4 +1,4 @@
-package air.foi.hr.trainerassistant.viewholder;
+package viewholder;
 
 import android.util.Log;
 import android.view.View;

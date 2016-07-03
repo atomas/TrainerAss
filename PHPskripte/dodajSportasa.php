@@ -7,7 +7,7 @@
 		$trener = $_POST['idTrener'];
 		
 		//Creating an sql query
-		$sql = "INSERT INTO Sportas (name,datRodjenja, idTrener) VALUES ('$name','$dat','$trener')";
+		$sql = "INSERT INTO Sportas (name, datRodjenja, idTrener) VALUES ('$name','$dat','$trener')";
 		
 		//Importing our db connection script
 		require_once('dbConnect.php');
@@ -22,4 +22,5 @@
 		//Closing the database 
 		mysqli_close($con);
 	}
+
 

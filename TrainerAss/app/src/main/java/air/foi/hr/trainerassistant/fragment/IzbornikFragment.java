@@ -26,7 +26,7 @@ public class IzbornikFragment extends BaseFragment {
             nm.addItem(new KandidatiFragment());
             nm.addItem(new PrisutnostFragment());
             nm.addItem(new RezultatFragment());
-
+            nm.addItem(new IndividualnaStatistikaFragment());
         }
         nm.setup();
 

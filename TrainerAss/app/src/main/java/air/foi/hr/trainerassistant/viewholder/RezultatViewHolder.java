@@ -26,17 +26,11 @@ public class RezultatViewHolder extends RecyclerView.ViewHolder {
         //buduci da je na mokapima prikazano samo tri atleticara iz svake discipline
         //sprema se disciplina i najbolja tri iz svake discipline
         disciplina.setText(disciplinae.getNaziv());
-        if (disciplinae.getAtleticarList().size() > 2) {
-            prvi.setText(disciplinae.getAtleticarList().get(0).getPrezime() + " " + disciplinae.getAtleticarList().get(0).getIme());
-            drugi.setText(disciplinae.getAtleticarList().get(1).getPrezime() + " " + disciplinae.getAtleticarList().get(1).getIme());
-            treci.setText(disciplinae.getAtleticarList().get(2).getPrezime() + " " + disciplinae.getAtleticarList().get(2).getIme());
-        }
-        if (disciplinae.getAtleticarList().size() == 2) {
-            prvi.setText(disciplinae.getAtleticarList().get(0).getPrezime() + " " + disciplinae.getAtleticarList().get(0).getIme());
-            drugi.setText(disciplinae.getAtleticarList().get(1).getPrezime() + " " + disciplinae.getAtleticarList().get(1).getIme());
-        }
-        if (disciplinae.getAtleticarList().size() == 1) {
-            prvi.setText(disciplinae.getAtleticarList().get(0).getPrezime() + " " + disciplinae.getAtleticarList().get(0).getIme());
+        
+        for(int i = 0; i < disciplinae.getAtleticarList().size(); i++){
+            if (i == 0){prvi.setText(disciplinae.getAtleticarList().get(i).getPrezime() + " " + disciplinae.getAtleticarList().get(i).getIme());}
+            else if (i == 1){drugi.setText(disciplinae.getAtleticarList().get(i).getPrezime() + " " + disciplinae.getAtleticarList().get(i).getIme());}
+            else if (i == 2){treci.setText(disciplinae.getAtleticarList().get(i).getPrezime() + " " + disciplinae.getAtleticarList().get(i).getIme());}
         }
     }
 

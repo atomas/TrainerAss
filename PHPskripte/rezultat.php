@@ -6,7 +6,9 @@ $id = $_POST['id'];
 require_once('dbConnect.php');
 	
 //Creating sql query
-$sql = "SELECT * FROM Clan AS c INNER JOIN StavkeTreninga AS s ON c.id = s.id_clan WHERE s.id_disciplina = '$id' ORDER BY rezultat DESC ";
+$sql = "SELECT * FROM Clan AS c 
+	INNER JOIN StavkeTreninga AS s ON c.id = s.id_clan 
+	WHERE s.id_disciplina = '$id' ORDER BY rezultat";
 	
 $r = mysqli_query($con,$sql);
 	
@@ -17,7 +19,8 @@ while($row = mysqli_fetch_array($r, MYSQL_ASSOC)){
 	array_push($result,array(
 		"id"=>$row['id'],
 		"ime"=>$row['ime'],
-		"prezime"=>$row['prezime']
+		"prezime"=>$row['prezime'],
+		"rezultat"=>$row['rezultat']
 	));
 }
 

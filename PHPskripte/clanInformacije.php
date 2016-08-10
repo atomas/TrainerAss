@@ -18,10 +18,10 @@ while($row = mysqli_fetch_array($r, MYSQL_ASSOC)){
 	array_push($result,array(
 		"id"=>$row['id'],
 		"ime"=>$row['ime'],
-		"prezime"=>$row['prezime']
-		"datum"=>$row['datum']
-		"visina"=>$row['visina']
-		"tezina"=>$row['tezina']
+		"prezime"=>$row['prezime'],
+		"datum"=>$row['datum'],
+		"visina"=>$row['visina'],
+		"tezina"=>$row['tezina'],
 	));
 }
 

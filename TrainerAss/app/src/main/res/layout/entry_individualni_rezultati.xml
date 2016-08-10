@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/disciplina_textView"
+        android:id="@+id/individualni_disciplina_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorAccent"
@@ -17,7 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:textColor="@color/colorAccent"
-        android:layout_marginStart="10dp"/>
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"/>
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/drugi_rezultat_textView"

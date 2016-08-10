@@ -66,4 +66,32 @@ public class JSONParser {
 
     }
 
+    //parsiranje detaljnih informacija o atleticaru
+    public static List<Atleticar> parseAtleticarDetealjno(String content) {
+
+        try {
+            JSONArray jsonArray = new JSONArray(content);
+            List<Atleticar> atleticar = new ArrayList<Atleticar>();
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                Atleticar a = new Atleticar();
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                a.setId(jsonObject.getInt("id"));
+                a.setIme(jsonObject.getString("ime"));
+                a.setPrezime(jsonObject.getString("prezime"));
+                a.setDatum_rodenja(jsonObject.getString("datum"));
+                a.setVisina(jsonObject.getInt("visina"));
+                a.setTezina(jsonObject.getInt("tezina"));
+                a.setVrijeme(jsonObject.getString("rezultat"));
+                atleticar.add(a);
+            }
+
+            return atleticar;
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

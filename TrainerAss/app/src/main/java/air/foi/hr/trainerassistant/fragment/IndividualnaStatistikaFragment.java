@@ -31,7 +31,7 @@ public class IndividualnaStatistikaFragment extends BaseFragment implements Navi
 
     @Override
     protected int getLayout() {
-        return R.layout.activity_rezultati;
+        return R.layout.activity_individualni;
     }
 
     @Override

@@ -61,6 +61,7 @@ public class IndividualnaStatistikaFragment extends BaseFragment implements Navi
         p.setMethod("POST");
         p.setUri("http://atomas.comxa.com/rest/rezultatIndividualno.php");
         p.setParam("id", String.valueOf(((Izbornik) getActivity()).getDisciplinaList().get(0).getId()));
+        p.setParam("id_clan", "11");
         Update update = new Update();
         update.execute(p);
         pDialog = new ProgressDialog(getActivity());

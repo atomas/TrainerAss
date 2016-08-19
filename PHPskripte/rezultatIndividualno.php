@@ -2,6 +2,7 @@
 
 //get the user id
 $id = $_POST['id'];
+$id = $_POST['id_clan'];
 
 //Importing Database Script 
 require_once('dbConnect.php');
@@ -11,7 +12,7 @@ $sql = "SELECT c.id, c.ime, c.prezime, c.datum, c.visina, c.tezina, d.naziv, s.r
 		FROM StavkeTreninga AS s 
 		INNER JOIN Clan as c ON c.id = s.id_clan 
 		INNER JOIN Disciplina AS d ON d.id = s.id_disciplina
-		WHERE s.id_clan = 11 AND s.id_disciplina = '$id'
+		WHERE s.id_clan = '$id_clan' AND s.id_disciplina = '$id'
 		ORDER BY d.id, s.rezultat";
 	
 $r = mysqli_query($con,$sql);

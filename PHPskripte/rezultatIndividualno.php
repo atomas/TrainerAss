@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 
 //get the user id
 $id = $_POST['id'];
-$id = $_POST['id_clan'];
+$id_clan = $_POST['id_clan'];
 
 //Importing Database Script 
 require_once('dbConnect.php');

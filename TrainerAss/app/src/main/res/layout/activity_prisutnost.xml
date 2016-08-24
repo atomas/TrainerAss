@@ -3,8 +3,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/korisnik_iid"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="7dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/ID"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/korisnik_preziime"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/korisnik_iid"
+        android:layout_marginLeft="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/Prezime"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/korisnik_iime"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/korisnik_preziime"
+        android:layout_marginLeft="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/Ime"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/prisutnost_recyclerView"
+        android:layout_marginTop="35dp"
         android:layout_width="match_parent"
         android:layout_alignParentTop="true"
         android:layout_above="@+id/dalje_prisutnost_button"

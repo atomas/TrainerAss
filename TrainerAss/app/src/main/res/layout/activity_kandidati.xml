@@ -1,23 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="@color/background"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/korisnik_id"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="45dp"
+        android:layout_gravity="top|left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:text="@string/ID"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/korisnik_prezime"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="top|center"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Prezime"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/korisnik_ime"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="70dp"
+        android:layout_gravity="top|right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Ime"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/kandidati_recyclerView"
+        android:layout_marginTop="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>
 
     <Button
         android:id="@+id/noviButton"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="bottom|center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:layout_centerHorizontal="true"
         android:text="@string/Novi"
         />
-
 </android.support.design.widget.CoordinatorLayout>

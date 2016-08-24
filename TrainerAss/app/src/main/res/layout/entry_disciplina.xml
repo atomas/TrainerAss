@@ -3,9 +3,9 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:weightSum="100"
-    android:layout_height="wrap_content">
+    android:layout_height="48dp">
 
-    <TextView
+<TextView
         android:id="@+id/id_disciplina_entry_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +19,8 @@
         android:textColor="@color/colorAccent"
         android:gravity="center"
         android:layout_weight="80"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <CheckBox
         android:id="@+id/checkBoxDisciplina"

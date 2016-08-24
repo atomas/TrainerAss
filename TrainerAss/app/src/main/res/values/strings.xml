@@ -26,4 +26,8 @@
     <string name="Novi">Novi</string>
     <string name="idClan">11</string>
     <string name="clanovi">Članovi:</string>
+    <string name="ID">ID</string>
+    <string name="Prezime">Prezime</string>
+    <string name="Ime">Ime</string>
+    <string name="Disciplina">Disciplina</string>
 </resources>

@@ -8,6 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorAccent"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/kandidat"/>
 
     <TextView
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:textColor="@color/colorAccent"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_marginStart="10dp"
         android:layout_below="@+id/kandidat_textView"/>
 
@@ -25,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:textColor="@color/colorAccent"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_marginStart="20dp"
         android:layout_below="@+id/ime_kandidat_textview"/>
 
@@ -35,13 +38,16 @@
         android:textColor="@color/colorAccent"
         android:layout_below="@+id/ime_kandidat_textview"
         android:layout_toRightOf="@+id/vrijeme_textview"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_toEndOf="@+id/vrijeme_textview"/>
 
     <Button
         android:id="@+id/dalje_pojedinacna_disciplina_button"
-        android:layout_width="wrap_content"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:text="@string/sljedeci"
+        android:layout_marginBottom="20dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/background"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
@@ -49,26 +55,32 @@
 
     <Button
         android:id="@+id/startTimer"
-        android:layout_width="wrap_content"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:text="@string/start"
+        android:layout_marginBottom="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/background"
         android:layout_above="@+id/dalje_pojedinacna_disciplina_button"/>
 
     <Button
         android:id="@+id/pauseTimer"
-        android:layout_width="wrap_content"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:text="@string/pause"
+        android:layout_marginBottom="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/background"
         android:layout_above="@+id/dalje_pojedinacna_disciplina_button"
         android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/resetTimer"
-        android:layout_width="wrap_content"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:text="@string/reset"
+        android:layout_marginBottom="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/background"
         android:layout_above="@+id/dalje_pojedinacna_disciplina_button"
         android:layout_alignParentEnd="true"

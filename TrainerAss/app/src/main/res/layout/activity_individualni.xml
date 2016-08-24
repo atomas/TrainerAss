@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorAccent"
         android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"/>
 
@@ -19,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorAccent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="10dp"/>
 

@@ -2,27 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="48dp"
     android:weightSum="100">
+
+    <TextView
+        android:id="@+id/id_kandidat_entry_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorAccent"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="15"/>
 
     <TextView
         android:id="@+id/ime_kandidat_entry_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorAccent"
-        android:layout_weight="40"/>
+        android:layout_weight="25"/>
 
     <TextView
         android:id="@+id/prezime_kandidat_entry_textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorAccent"
-        android:layout_weight="40"/>
+        android:layout_weight="25"/>
 
     <CheckBox
         android:id="@+id/pristunost_kanddiat_entry_checkbox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="20"/>
+        android:layout_weight="10"/>
 
 </LinearLayout>

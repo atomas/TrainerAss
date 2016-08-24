@@ -21,6 +21,9 @@ public class NazocniViewHolder extends ViewHolder {
     }
 
     @Override
+    protected int getId() { return R.id.id_kandidat_entry_textView; }
+
+    @Override
     protected int getIme() {
         return R.id.ime_kandidat_entry_textView;
     }

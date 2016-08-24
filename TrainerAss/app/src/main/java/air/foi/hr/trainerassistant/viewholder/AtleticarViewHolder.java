@@ -18,6 +18,11 @@ public class AtleticarViewHolder extends ViewHolder {
     }
 
     @Override
+    protected int getId() {
+        return R.id.idClanTextView;
+    }
+
+    @Override
     protected int getIme() {
         return R.id.ime_textview;
     }

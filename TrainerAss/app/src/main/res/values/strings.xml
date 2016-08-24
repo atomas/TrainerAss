@@ -21,7 +21,9 @@
     <string name="title_activity_register">RegisterActivity</string>
     <string name="email">email</string>
     <string name="Email">Email</string>
-    <string name="id_user">Unesite ID člana</string>
-    <string name="ok_button">ok_button</string>
+    <string name="id_user">Unesite ID člana:</string>
+    <string name="ok_button">Učitaj</string>
     <string name="Novi">Novi</string>
+    <string name="idClan">11</string>
+    <string name="clanovi">Članovi:</string>
 </resources>

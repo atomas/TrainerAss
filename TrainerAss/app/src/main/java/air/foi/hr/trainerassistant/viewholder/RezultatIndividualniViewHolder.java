@@ -26,9 +26,9 @@ public class RezultatIndividualniViewHolder extends RecyclerView.ViewHolder {
         disciplina.setText(disciplinae.getNaziv());
 
         for(int i = 0; i < disciplinae.getAtleticarList().size(); i++){
-            if (i == 0){prvi.setText(disciplinae.getAtleticarList().get(i).getVrijeme() + " sekundi");}
-            else if (i == 1){drugi.setText(disciplinae.getAtleticarList().get(i).getVrijeme() + " sekundi");}
-            else if (i == 2){treci.setText(disciplinae.getAtleticarList().get(i).getVrijeme() + " sekundi");}
+            if (i == 0){prvi.setText(disciplinae.getAtleticarList().get(i).getVrijeme() + " sekundi ");}
+            else if (i == 1){drugi.setText(disciplinae.getAtleticarList().get(i).getVrijeme() + " sekundi ");}
+            else if (i == 2){treci.setText(disciplinae.getAtleticarList().get(i).getVrijeme() + " sekundi ");}
         }
     }
 }

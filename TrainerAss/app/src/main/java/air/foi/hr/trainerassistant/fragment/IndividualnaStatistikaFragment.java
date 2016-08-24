@@ -1,11 +1,13 @@
 package air.foi.hr.trainerassistant.fragment;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,6 +25,10 @@ import air.foi.hr.trainerassistant.base.BaseFragment;
 import air.foi.hr.trainerassistant.model.Atleticar;
 import air.foi.hr.trainerassistant.model.Disciplina;
 
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+
 public class IndividualnaStatistikaFragment extends BaseFragment implements NavigationItem {
 
     private int position;
@@ -34,6 +40,7 @@ public class IndividualnaStatistikaFragment extends BaseFragment implements Navi
     private List<Atleticar> atleticarList;
     private RecyclerView recyclerView;
     private RezultatIndividualniAdapter adapter;
+    private String id_clan;
 
     private TextView clan, podaci;
 
@@ -56,7 +63,7 @@ public class IndividualnaStatistikaFragment extends BaseFragment implements Navi
 
         disciplinaList = new ArrayList<>();
         a=0;
-        //dohvacanje podataka sa apija
+        /*//dohvacanje podataka sa apija
         RequestPackage p = new RequestPackage();
         p.setMethod("POST");
         p.setUri("http://atomas.comxa.com/rest/rezultatIndividualno.php");
@@ -67,7 +74,36 @@ public class IndividualnaStatistikaFragment extends BaseFragment implements Navi
         pDialog = new ProgressDialog(getActivity());
         pDialog.setCancelable(false);
         pDialog.setCanceledOnTouchOutside(false);
-        pDialog.show();
+        pDialog.show();*/
+
+        showMyDialog();
+    }
+
+    private void showMyDialog(){
+        final Dialog dialog = new Dialog(getActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(false);
+        dialog.setContentView(R.layout.entry_id_individualni);
+
+        final EditText id = (EditText) dialog.findViewById(R.id.idEditText);
+
+        Button dialogButton = (Button) dialog.findViewById(R.id.okButton);
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                id_clan = id.getText().toString();
+                RequestPackage p = new RequestPackage();
+                p.setMethod("POST");
+                p.setUri("http://atomas.comxa.com/rest/rezultatIndividualno.php");
+                p.setParam("id", String.valueOf(((Izbornik) getActivity()).getDisciplinaList().get(0).getId()));
+                p.setParam("id_clan", id_clan);
+                Update update = new Update();
+                update.execute(p);
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 
     @Override
@@ -99,6 +135,10 @@ public class IndividualnaStatistikaFragment extends BaseFragment implements Navi
             for (Disciplina dr : ((Izbornik) getActivity()).getDisciplinaList()){
                 Log.d("Ovo je " + String.valueOf(a), dr.getNaziv());
             }
+            pDialog = new ProgressDialog(getActivity());
+            pDialog.setCancelable(false);
+            pDialog.setCanceledOnTouchOutside(false);
+            pDialog.show();
         }
 
         @Override
@@ -135,12 +175,12 @@ public class IndividualnaStatistikaFragment extends BaseFragment implements Navi
             } else {
                 Log.i("Usao sam u else", "else");
                 //postoji jos atleticara koji se trebaju dodati, zbog toga se ponovno poziva server
-                //pDialog.dismiss();
+                pDialog.dismiss();
                 RequestPackage p = new RequestPackage();
                 p.setMethod("POST");
                 p.setUri("http://atomas.comxa.com/rest/rezultatIndividualno.php");
                 p.setParam("id", String.valueOf(((Izbornik) getActivity()).getDisciplinaList().get(a).getId()));
-                p.setParam("id_clan", "11");
+                p.setParam("id_clan", id_clan);
                 Update update = new Update();
                 update.execute(p);
             }

@@ -153,7 +153,7 @@ public class VrijemeFragment extends BaseFragment implements View.OnClickListene
         a.setDisciplina(((Izbornik) getActivity()).getNazocneDiscipline().get(b).getNaziv());
         Updateuser up = new Updateuser();
         RequestPackage r = new RequestPackage();
-        r.setUri("http://izavrski.netau.net/rest/dodaj_rezultat.php");
+        r.setUri("http://atomas.comxa.com/rest/dodajRezultat.php");
         r.setMethod("POST");
         r.setParam("id_clan", String.valueOf(a.getId()));
         r.setParam("id_disciplina", String.valueOf(((Izbornik) getActivity()).getNazocneDiscipline().get(b).getId()));

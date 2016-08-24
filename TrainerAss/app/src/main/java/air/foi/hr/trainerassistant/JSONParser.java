@@ -26,7 +26,6 @@ public class JSONParser {
                 a.setId(jsonObject.getInt("id"));
                 a.setIme(jsonObject.getString("ime"));
                 a.setPrezime(jsonObject.getString("prezime"));
-                a.setVrijeme(jsonObject.getString("rezultat"));
                 atleticar.add(a);
 
             }
